@@ -36,7 +36,7 @@ sudo ./menu_xarxes.sh
 * Descripció: Configuració de protocols d'encaminament dinàmic
 * Nota: 10
 
-#CONTACTE
+# CONTACTE
 Qualsevol dubte o sugerencia, contacta a:
 [pol.pujol.santaella@gmail.com]
 
