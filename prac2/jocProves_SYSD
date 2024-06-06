@@ -1,0 +1,68 @@
+------------------
+PACKAGE nano:
+------------------
+nano està instal·lat
+Versió: 5.4-2+deb11u2
+Data instal·lació: /var/log/dpkg.log.1:2023-02-13 14:05:22
+No hi ha actualització disponible
+Llista Dependències: 
+libc6
+libncursesw6
+libtinfo6
+Fichers de configuració associats: 
+/etc/nanorc
+------------------
+PACKAGE john:
+------------------
+john està instal·lat
+Versió: 1.8.0-4
+Data instal·lació: /var/log/dpkg.log.1:2024-02-27 12:37:38
+No hi ha actualització disponible
+Llista Dependències: 
+john-data
+libc6
+libcrypt1
+libgomp1
+Fichers de configuració associats: 
+/etc/cron.d
+/etc/cron.d/john
+/etc/john
+/etc/john/john-mail.conf
+/etc/john/john-mail.msg
+/etc/john/john.conf
+------------------
+PACKAGE bash:
+------------------
+bash està instal·lat
+Versió: 5.1-2+deb11u1
+Data instal·lació: /var/log/dpkg.log.1:2023-02-13 13:53:11
+No hi ha actualització disponible
+Llista Dependències: 
+base-files
+debianutils
+Fichers de configuració associats: 
+/etc/bash.bashrc
+/etc/skel
+/etc/skel/.bash_logout
+/etc/skel/.bashrc
+/etc/skel/.profile
+------------------
+PACKAGE vim:
+------------------
+vim està instal·lat
+Versió: 2:8.2.2434-3+deb11u1
+Data instal·lació: /var/log/dpkg.log.1:2023-02-13 16:56:56
+No hi ha actualització disponible
+Llista Dependències: 
+vim-common
+vim-runtime
+libacl1
+libc6
+libgpm2
+libselinux1
+libtinfo6
+Fichers de configuració associats: 
+------------------
+PACKAGE fff:
+------------------
+fff no està instal·lat.

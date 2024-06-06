@@ -1,0 +1,60 @@
+key CLAU_DHCPDNS {
+    algorithm hmac-md5;
+    secret "ov8dcY0IcysuDtomNGcm/w==";
+};
+
+options {
+
+	directory "/var/cache/bind";
+
+
+	// If there is a firewall between you and nameservers you want
+	// to talk to, you may need to fix the firewall to allow multiple
+	// ports to talk.  See http://www.kb.cert.org/vuls/id/800113
+
+	// If your ISP provided one or more IP addresses for stable 
+	// Uncomment the following block, and insert the addresses replacing 
+	// the all-0's placeholder.
+        forwarders {
+             10.0.2.3; 8.8.8.8;
+	};
+	forward only;
+	allow-recursion {
+	    contenidors;
+	};
+
+	allow-transfer {
+	    localhost;
+	};
+
+	auth-nxdomain no;
+	//========================================================================
+	// If BIND logs error messages about the root key being expired,
+	// you will need to update your keys.  See https://www.isc.org/bind-keys
+	//========================================================================
+	dnssec-validation no;
+
+	listen-on-v6 { none; };
+};
+
+acl contenidors {
+    198.18.112.1;
+    198.18.112.254;
+    172.24.127.254;
+    172.24.0.1;
+    172.24.127.90;
+    172.24.127.88;    
+};
+
+logging {
+    category update { update_debug; };
+    channel update_debug {
+        file "/var/log/bind/update_debug.log";
+        severity debug 1;
+        print-category yes;
+        print-severity yes;
+        print-time yes;
+    };
+};
+
+

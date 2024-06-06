@@ -1,0 +1,18 @@
+;; Connection to ::1#53(::1) for 24.172.in-addr.arpa failed: connection refused.
+
+; <<>> DiG 9.16.48-Debian <<>> @localhost -t AXFR 24.172.in-addr.arpa
+; (2 servers found)
+;; global options: +cmd
+24.172.in-addr.arpa.	604800	IN	SOA	ns.intranet.gsx. root.ns.intranet.gsx. 4 604800 86400 2419200 604800
+24.172.in-addr.arpa.	604800	IN	NS	ns.intranet.gsx.
+1.0.24.172.in-addr.arpa. 604800	IN	PTR	router.intranet.gsx.
+254.127.24.172.in-addr.arpa. 604800 IN	PTR	ns.intranet.gsx.
+254.127.24.172.in-addr.arpa. 604800 IN	PTR	dhcp.intranet.gsx.
+88.127.24.172.in-addr.arpa. 3600 IN	PTR	prefix-88.intranet.gsx.
+89.127.24.172.in-addr.arpa. 3600 IN	PTR	prefix-89.intranet.gsx.
+24.172.in-addr.arpa.	604800	IN	SOA	ns.intranet.gsx. root.ns.intranet.gsx. 4 604800 86400 2419200 604800
+;; Query time: 12 msec
+;; SERVER: 127.0.0.1#53(127.0.0.1)
+;; WHEN: Tue Apr 09 18:09:04 UTC 2024
+;; XFR size: 8 records (messages 1, bytes 340)
+

@@ -1,0 +1,22 @@
+;; Connection to ::1#53(::1) for intranet.gsx failed: connection refused.
+
+; <<>> DiG 9.16.48-Debian <<>> @localhost -t AXFR intranet.gsx
+; (2 servers found)
+;; global options: +cmd
+intranet.gsx.		604800	IN	SOA	ns.intranet.gsx. root.ns.intranet.gsx. 4 604800 86400 2419200 604800
+intranet.gsx.		604800	IN	NS	ns.intranet.gsx.
+dhcp.intranet.gsx.	604800	IN	A	172.24.127.254
+ns.intranet.gsx.	604800	IN	A	198.18.127.254
+prefix-88.intranet.gsx.	3600	IN	TXT	"316a556d9f1c8ec950942844102b0990d2"
+prefix-88.intranet.gsx.	3600	IN	A	172.24.127.88
+prefix-89.intranet.gsx.	3600	IN	TXT	"310101df0beaf0429ae00b2aea8c050fd1"
+prefix-89.intranet.gsx.	3600	IN	A	172.24.127.89
+router.intranet.gsx.	604800	IN	A	172.24.0.1
+server.intranet.gsx.	604800	IN	CNAME	ns.intranet.gsx.
+www.intranet.gsx.	604800	IN	CNAME	ns.intranet.gsx.
+intranet.gsx.		604800	IN	SOA	ns.intranet.gsx. root.ns.intranet.gsx. 4 604800 86400 2419200 604800
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#53(127.0.0.1)
+;; WHEN: Tue Apr 09 18:06:15 UTC 2024
+;; XFR size: 12 records (messages 1, bytes 408)
+

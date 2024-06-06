@@ -1,0 +1,90 @@
+  TIME: 2024-03-23 12:35:12.689
+    IP: 0.0.0.0 (0:16:3e:69:5e:cf) > 255.255.255.255 (ff:ff:ff:ff:ff:ff)
+    OP: 1 (BOOTPREQUEST)
+ HTYPE: 1 (Ethernet)
+  HLEN: 6
+  HOPS: 0
+   XID: fff70b12
+  SECS: 0
+ FLAGS: 0
+CIADDR: 0.0.0.0
+YIADDR: 0.0.0.0
+SIADDR: 0.0.0.0
+GIADDR: 0.0.0.0
+CHADDR: 00:16:3e:69:5e:cf:00:00:00:00:00:00:00:00:00:00
+ SNAME: .
+ FNAME: .
+OPTION:  53 (  1) DHCP message type         1 (DHCPDISCOVER)
+OPTION:  50 (  4) Request IP address        172.24.127.89
+OPTION:  12 (  7) Host name                 client1
+OPTION:  61 ( 19) Client-identifier         ff:3e:69:5e:cf:00:01:00:01:2d:91:85:28:00:16:3e:69:5e:cf
+---------------------------------------------------------------------------
+
+  TIME: 2024-03-23 12:35:13.729
+    IP: 0.0.0.0 (0:16:3e:69:5e:cf) > 255.255.255.255 (ff:ff:ff:ff:ff:ff)
+    OP: 1 (BOOTPREQUEST)
+ HTYPE: 1 (Ethernet)
+  HLEN: 6
+  HOPS: 0
+   XID: fff70b12
+  SECS: 0
+ FLAGS: 0
+CIADDR: 0.0.0.0
+YIADDR: 0.0.0.0
+SIADDR: 0.0.0.0
+GIADDR: 0.0.0.0
+CHADDR: 00:16:3e:69:5e:cf:00:00:00:00:00:00:00:00:00:00
+ SNAME: .
+ FNAME: .
+OPTION:  53 (  1) DHCP message type         3 (DHCPREQUEST)
+OPTION:  54 (  4) Server identifier         172.24.127.254
+OPTION:  50 (  4) Request IP address        172.24.127.89
+OPTION:  12 (  7) Host name                 client1
+OPTION:  61 ( 19) Client-identifier         ff:3e:69:5e:cf:00:01:00:01:2d:91:85:28:00:16:3e:69:5e:cf
+---------------------------------------------------------------------------
+
+  TIME: 2024-03-23 12:35:16.225
+    IP: 0.0.0.0 (0:16:3e:a6:e:39) > 255.255.255.255 (ff:ff:ff:ff:ff:ff)
+    OP: 1 (BOOTPREQUEST)
+ HTYPE: 1 (Ethernet)
+  HLEN: 6
+  HOPS: 0
+   XID: 7e762166
+  SECS: 0
+ FLAGS: 0
+CIADDR: 0.0.0.0
+YIADDR: 0.0.0.0
+SIADDR: 0.0.0.0
+GIADDR: 0.0.0.0
+CHADDR: 00:16:3e:a6:0e:39:00:00:00:00:00:00:00:00:00:00
+ SNAME: .
+ FNAME: .
+OPTION:  53 (  1) DHCP message type         1 (DHCPDISCOVER)
+OPTION:  50 (  4) Request IP address        172.24.127.88
+OPTION:  12 (  7) Host name                 client2
+OPTION:  61 ( 19) Client-identifier         ff:3e:a6:0e:39:00:01:00:01:2d:91:85:27:00:16:3e:a6:0e:39
+---------------------------------------------------------------------------
+
+  TIME: 2024-03-23 12:35:17.266
+    IP: 0.0.0.0 (0:16:3e:a6:e:39) > 255.255.255.255 (ff:ff:ff:ff:ff:ff)
+    OP: 1 (BOOTPREQUEST)
+ HTYPE: 1 (Ethernet)
+  HLEN: 6
+  HOPS: 0
+   XID: 7e762166
+  SECS: 0
+ FLAGS: 0
+CIADDR: 0.0.0.0
+YIADDR: 0.0.0.0
+SIADDR: 0.0.0.0
+GIADDR: 0.0.0.0
+CHADDR: 00:16:3e:a6:0e:39:00:00:00:00:00:00:00:00:00:00
+ SNAME: .
+ FNAME: .
+OPTION:  53 (  1) DHCP message type         3 (DHCPREQUEST)
+OPTION:  54 (  4) Server identifier         172.24.127.254
+OPTION:  50 (  4) Request IP address        172.24.127.88
+OPTION:  12 (  7) Host name                 client2
+OPTION:  61 ( 19) Client-identifier         ff:3e:a6:0e:39:00:01:00:01:2d:91:85:27:00:16:3e:a6:0e:39
+---------------------------------------------------------------------------
+

@@ -1,0 +1,9 @@
+[Unit]
+Description=Consulta de paquets al boot
+
+[Service]
+Type=simple
+ExecStart=/home/milax/Escriptori/GSX/P2/script_consulta.sh
+
+[Install]
+WantedBy=multi-user.target

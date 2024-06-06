@@ -1,0 +1,88 @@
+Proves amb router R2
+---------------------
+default via [35m10.112.1.1 [0mdev [36mlink1_veth2 [0mproto zebra metric 20 
+[35m10.112.1.0/30 [0mdev [36mlink1_veth2 [0mproto kernel scope link src [35m10.112.1.2 [0m
+[35m10.112.2.0/30 [0mdev [36mlink2_veth1 [0mproto kernel scope link src [35m10.112.2.1 [0m
+[35m10.112.3.0/30 [0mvia [35m10.112.2.2 [0mdev [36mlink2_veth1 [0mproto zebra metric 20 
+[35m10.112.4.0/30 [0mvia [35m10.112.1.1 [0mdev [36mlink1_veth2 [0mproto zebra metric 20 
+-----------------------
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+router2# show running-config
+Building configuration...
+
+Current configuration:
+!
+!
+interface link1_veth2
+!
+interface link2_veth1
+!
+interface lo
+!
+router rip
+ version 2
+ network 10.112.1.0/30
+ network 10.112.2.0/30
+!
+ip forwarding
+!
+line vty
+!
+end
+router2# show ip route
+Codes: K - kernel route, C - connected, S - static, R - RIP,
+       O - OSPF, I - IS-IS, B - BGP, P - PIM, A - Babel, N - NHRP,
+       > - selected route, * - FIB route
+
+R>* 0.0.0.0/0 [120/2] via 10.112.1.1, link1_veth2, 00:00:13
+C>* 10.112.1.0/30 is directly connected, link1_veth2
+C>* 10.112.2.0/30 is directly connected, link2_veth1
+R>* 10.112.3.0/30 [120/2] via 10.112.2.2, link2_veth1, 00:00:12
+R>* 10.112.4.0/30 [120/2] via 10.112.1.1, link1_veth2, 00:00:13
+C>* 127.0.0.0/8 is directly connected, lo
+router2# show ip rip status
+Routing Protocol is "rip"
+  Sending updates every 30 seconds with +/-50%, next due in 10 seconds
+  Timeout after 180 seconds, garbage collect after 120 seconds
+  Outgoing update filter list for all interface is not set
+  Incoming update filter list for all interface is not set
+  Default redistribution metric is 1
+  Redistributing:
+  Default version control: send version 2, receive version 2 
+    Interface        Send  Recv   Key-chain
+    link1_veth2      2     2      
+    link2_veth1      2     2      
+  Routing for Networks:
+    10.112.1.0/30
+    10.112.2.0/30
+  Routing Information Sources:
+    Gateway          BadPackets BadRoutes  Distance Last Update
+    10.112.1.1               0         0       120   00:00:15
+    10.112.2.2               0         0       120   00:00:16
+  Distance: (default is 120)
+router2# exit
+-----------------------
+traceroute to 10.112.2.2 (10.112.2.2), 30 hops max, 60 byte packets
+ 1  10.112.1.2  0.041 ms  0.006 ms  0.005 ms
+ 2  10.112.2.2  0.015 ms  0.006 ms  0.007 ms
+traceroute to 10.112.3.2 (10.112.3.2), 30 hops max, 60 byte packets
+ 1  10.112.2.2  0.025 ms  0.005 ms  0.004 ms
+ 2  10.112.3.2  0.011 ms  0.006 ms  0.005 ms
+------------------------
+Ruta de R1 -> 10.112.2.1 abans d'abaixar
+10.112.2.1 via 10.112.1.2 dev link1_veth1 src 10.112.1.1 uid 0 
+    cache 
+traceroute to 10.112.2.1 (10.112.2.1), 30 hops max, 60 byte packets
+ 1  10.112.2.1  0.030 ms  0.005 ms  0.005 ms
+Baixem link1_veth2...
+Ruta R1 -> 10.112.2.1 actualitzada: 
+10.112.2.1 via 10.112.4.1 dev link4_veth2 src 10.112.4.2 uid 0 
+    cache 
+traceroute to 10.112.2.1 (10.112.2.1), 30 hops max, 60 byte packets
+ 1  10.112.4.1  0.078 ms  0.013 ms  0.011 ms
+ 2  10.112.3.1  0.025 ms  0.017 ms  0.008 ms
+ 3  10.112.2.1  0.015 ms  0.010 ms  0.010 ms
+-------------------------

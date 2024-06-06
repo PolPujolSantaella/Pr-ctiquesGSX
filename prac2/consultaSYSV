@@ -1,0 +1,58 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          consultaSYSV
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Consulta de paquets al boot
+# Description:       Aquest script executa consulta al boot si no rep cap argument i existeix /tmp/paquets.
+### END INIT INFO
+
+# Path absolut: /etc/init.d/consultaSYSV
+# Permisos correctes: 755 (rwxr-xr-x)
+# Propietari: root
+# Grup: root
+
+
+# Ruta de l'script consulta
+CONSULTA_SCRIPT="/home/milax/Escriptori/GSX/P2/consulta.sh"
+
+test -x "$CONSULTA_SCRIPT" || exit 0
+
+. /lib/lsb/init-functions
+
+set -e
+
+# Comprova si s'han passat arguments al servei
+case "$1" in
+	start)
+
+        	# Comprova si existeix el fitxer /tmp/paquets
+       		if [ -f "/tmp/paquets" ]; then
+            	    # Llegeix els paràmetres del fitxer
+            	    PARAMETRES=$(cat /tmp/paquets)
+           	    # Executa l'script consulta amb els paràmetres llegits
+            	    $CONSULTA_SCRIPT $PARAMETRES > /home/milax/Escriptori/GSX/P2/jocProves_SYSV 2>&1
+        	else
+            	    # Si no hi ha paràmetres i no existeix el fitxer, registra un missatge al log
+		    logger -t consultaSYSV "No s'han proporcionat paràmetres i el fitxer /tmp/paquets no existeix."
+		fi
+		;;
+
+	stop)
+
+		echo "STOP"
+	;;
+
+	restart)
+		stop
+		start
+	;;
+
+	*)
+		echo "Especifica comanda [stop][start][restart]" >&2
+		exit 1
+	;;
+esac
+exit 0

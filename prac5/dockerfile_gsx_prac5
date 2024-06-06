@@ -1,0 +1,35 @@
+# Fitxer: dockerfile_gsx_prac5
+# vim: syntax=dockerfile
+
+FROM debian:bullseye-slim
+MAINTAINER Professor GSX
+
+RUN echo "deb https://deb.debian.org/debian/ bullseye non-free" > /etc/apt/sources.list.d/non-free.list
+
+RUN apt update && \
+    apt-get install -y --no-install-recommends \
+    iproute2 \
+    bind9-host \
+    iputils-ping \
+    dnsutils \
+    ifupdown \
+    iptables \
+    isc-dhcp-client \
+    nano \
+    procps \
+    rsyslog \
+    tcpdump \
+    snmp \
+    snmpd \
+    cron \
+    snmp-mibs-downloader \
+    && apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY ./prac3_PUJOLSANTAELLA.tgz /root
+
+WORKDIR    /root
+RUN tar -xzf prac3_PUJOLSANTAELLA.tgz
+
+COPY SNMPv2-PDU.diff /root
+RUN patch /usr/share/snmp/mibs/ietf/SNMPv2-PDU </root/SNMPv2-PDU.diff
