@@ -9,8 +9,8 @@ Aquest és l'entorn utilitzat en les pràctiques de xarxes. Per executar:
 sudo ./menu_xarxes.sh
 
 ## Prac1: Configuració estàtica de les NICs
-    - Descripció: Configuració manual de les tarjetes de red (NICs).
-    - Nota: 9
+-Descripció: Configuració manual de les tarjetes de red (NICs).
+-Nota: 9
 
 ## Prac2: Administració i Shell Scripts, Boot i Serveis, Gestió de Processos
 #Descripció: Tasques d'administració sistema, creació d'scripts, configuració del arranc i servis i gestió de processos.
