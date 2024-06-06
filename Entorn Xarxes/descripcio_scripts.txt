@@ -1,0 +1,49 @@
+Al direcori prinicpal sols hi ha un script de menú, el qual crida a tota la resta.
+
+
+Directori auxiliars:
+
+Hi ha els scripts cridats pel menú principal.
+Puntualment els podeu executar vosaltres des de la línia de comandes.
+
+auxiliars/definicions.sh:
+Definicions de constants per a usar en altres scripts.
+Permet parametritzar-los i fer-los més genèrics.
+S'inclou als altres, per si sol no fa res: vosaltres no l'heu d'executar (tret per a depurar).
+
+auxiliars/prepara_requisits.sh:
+Comprova que estem a un Debian-like i
+instal·la els paquets que necessitarem al amfitrió.
+
+auxiliars/crea_contenidors.sh:
+Crea els contenidors lxc.
+Aquest pot tardar força.
+
+auxiliars/atura_contenidors_lxc.sh:
+atura un dels contenidors lxc de GSX passat per paràmetre.
+
+auxiliars/gsxnet_host.sh:
+Crea la infraestructura de xarxa al host/AMFITRIÓ.
+Crea els bridges i connectant-hi les vNICs i la NIC de Internet.
+
+
+auxiliars/engega_contenidors_lxc.sh:
+executa TOTS els contenidors virtuals i obre automàticament els TERMINALS corresponents.
+
+auxiliars/executa_contenidor_lxc.sh:
+executa un dels contenidors de GSX passat per paràmetre.
+(usualment cridat per engega_contenidors_lxc)
+
+auxiliars/elimina_contenidors.sh:
+Elimina els contenidors.
+
+Utilitats:
+
+auxiliars/comprova_internet.sh:
+Mostra la info de xarxa i prova pings i dns.
+
+auxiliars/comprova_entorn.sh:
+Comprova i mostra la infraestructura de contenidors i xarxa virtual.
+
+
+LoC: unes 1800 línies.
