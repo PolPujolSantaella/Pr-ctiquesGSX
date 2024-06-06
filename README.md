@@ -1,6 +1,7 @@
 # PràctiquesGSX
 
-Aquest repositori conté les pràctiques realitzades en el curs de Gestió de Sistemes i Xarxes 2024, fetes per mi :) 
+Aquest repositori conté les pràctiques realitzades en el curs de Gestió de Sistemes i Xarxes 2024, fetes per mi :) .
+
 Cada directori representa una pràctica diferent:
 
 ## Entorn Xarxes
