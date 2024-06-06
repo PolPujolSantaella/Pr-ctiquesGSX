@@ -6,8 +6,7 @@ Cada directori representa una pràctica diferent:
 
 ## Entorn Xarxes
 Aquest és l'entorn utilitzat en les pràctiques de xarxes. Per executar:
-'''sh
-sudo ./menu_xarxes.sh
+    sudo ./menu_xarxes.sh
 
 ## Prac1: Configuració estàtica de les NICs
 * Descripció: Configuració manual de les tarjetes de red (NICs).
